@@ -1,30 +1,21 @@
-from enum import Enum
 from datetime import datetime
-
 
 _current_id = 0
 
 
-# create specific options for task priority
-class Priority(Enum):
-    LOW = 1
-    MEDIUM = 2
-    HIGH = 3
-    URGENT = 4
-
-
 # generate a unique id number for each task
 def generate_id() -> int:
-    global _current_id  # preguntar si esto es necesario
+    global _current_id
     _current_id += 1
     return _current_id
 
 
-def create_task(task: str, due_date: str) -> dict:
+def create_task(task: str, priority: int, due_date: str) -> dict:
+    prior_list = ["LOW", "MEDIUM", "HIGH", "URGENT"]
     return {
         "id": generate_id(),
         "task": task,
-        # "priority": priority.value,
+        "priority": prior_list[priority],
         "due_date": due_date,
         "completed": False,
     }
@@ -36,3 +27,12 @@ def validate_date(date: str, fmt: str = "%d-%m-%Y") -> bool:
         return True
     except ValueError:
         return False
+
+
+def add_task(task_list: list, new_task: dict) -> list:
+    task_list.append(new_task)
+    return task_list
+
+
+def delete_task(task_list: list, task_id: int) -> list:
+    return [task for task in task_list if task["id"] != task_id]
