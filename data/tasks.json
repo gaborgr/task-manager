@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "task": "listo para comer",
+    "due_date": "31-12-2025",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "task": "estudiar progrmaando",
+    "due_date": "31-12-2025",
+    "completed": false
+  }
+]
