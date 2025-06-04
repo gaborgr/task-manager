@@ -12,5 +12,12 @@
     "priority": "URGENT",
     "due_date": "31-12-2025",
     "completed": false
+  },
+  {
+    "id": 1,
+    "task": "Hacer el almuerzo",
+    "priority": "HIGH",
+    "due_date": "30-06-2025",
+    "completed": false
   }
 ]

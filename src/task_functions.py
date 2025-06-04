@@ -1,4 +1,5 @@
 from datetime import datetime
+from file_operations import save_task
 
 _current_id = 0
 
@@ -36,3 +37,12 @@ def add_task(task_list: list, new_task: dict) -> list:
 
 def delete_task(task_list: list, task_id: int) -> list:
     return [task for task in task_list if task["id"] != task_id]
+
+
+def clear_tasks():
+    confirm = input("Delete ALL tasks? (y/n): ")
+    if confirm.lower() == "y":
+        save_task([])
+        global _current_id
+        _current_id = 0
+        print("All tasks deleted!")

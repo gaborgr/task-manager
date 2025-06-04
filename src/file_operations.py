@@ -9,9 +9,9 @@ JSON_PATH = os.path.join(DATA_DIR, "tasks.json")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 
-def save_task(task):
+def save_task(tasks: list):
     with open(JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(task, f, indent=2)
+        json.dump(tasks, f, indent=2)
 
 
 def load_tasks():
