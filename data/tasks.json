@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "task": "Hacer la tarea",
-    "priority": "HIGH",
-    "due_date": "04-04-2025",
-    "completed": true
+    "task": "Caminando duro",
+    "priority": "LOW",
+    "due_date": "31-08-2025",
+    "completed": false
   }
 ]

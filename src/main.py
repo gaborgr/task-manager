@@ -1,77 +1,12 @@
-from file_operations import save_task, load_tasks
-from task_functions import (
-    create_task,
-    validate_date,
-    add_task,
-    delete_task,
-    clear_tasks,
-    completed_task,
-)
 import os, time
-
-
-def menu():
-    print("===== Task Manager =====")
-    print("Options:")
-    print("1. Show tasks. 🖨")
-    print("2. Add new task. ➕")
-    print("3. Delete task 🗑.")
-    print("4. Mark task as a complet. ✔")
-    print("5. Delete all tasks. ☢")
-    print("6. Exit. 🚪")
-    print("========================")
-    print()
-
-    return int(input("Enter your choice: "))
-
-
-def new_task_to_add():
-    tasks = [task for task in load_tasks()]
-    task = input("Enter the task: ")
-    print("How important it is?")
-    print("1. LOW")
-    print("2. MEDIUM")
-    print("3. HIGH")
-    print("4. URGENT")
-    priority = int(input("Select an option: "))
-    due_date = input("Enter de due-date (e.x. dd-mm-YYYY): ")
-    new_task = create_task(task, priority, due_date)
-    add_task(tasks, new_task)
-    save_task(tasks)
-
-
-def delete_single_task():
-    tasks = [task for task in load_tasks()]
-    taks_id = int(input("Enter the Task ID. you want delete: "))
-    print()
-    sure = input(f"Are you sure you want eliminate the Task ID. {taks_id}? (y/n): ")
-    print()
-    if sure.lower() == "y":
-        return
-    else:
-        updated_list = delete_task(tasks, taks_id)
-        save_task(updated_list)
-
-
-def mark_task():
-    taks_id = int(input("Enter the Task ID. you completed: "))
-    tasks = [task for task in load_tasks()]
-    new_list = completed_task(taks_id, tasks)
-    save_task(new_list)
-
-
-def show_tasks():
-    tasks = [task for task in load_tasks()]
-    size = len(tasks)
-    if size == 0:
-        print("Empty List!")
-        return
-
-    max_len_priority = max(len(task["priority"]) for task in tasks)
-    for i in range(size):
-        print(
-            f"Task ID. {tasks[i]['id']} | Due Date: {tasks[i]['due_date']} | PRIORITY: {tasks[i]['priority']:<{max_len_priority}} | Task: {tasks[i]['task']}"
-        )
+from task_functions import (
+    delete_single_task,
+    clear_tasks,
+    show_tasks,
+    menu,
+    new_task_to_add,
+    mark_task,
+)
 
 
 def clear_screen():
