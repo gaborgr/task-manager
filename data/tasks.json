@@ -1,23 +1,9 @@
 [
   {
     "id": 1,
-    "task": "listo para comer",
-    "priority": "LOW",
-    "due_date": "31-12-2025",
-    "completed": false
-  },
-  {
-    "id": 2,
-    "task": "estudiar progrmaando",
-    "priority": "URGENT",
-    "due_date": "31-12-2025",
-    "completed": false
-  },
-  {
-    "id": 1,
-    "task": "Hacer el almuerzo",
+    "task": "Hacer la tarea",
     "priority": "HIGH",
-    "due_date": "30-06-2025",
-    "completed": false
+    "due_date": "04-04-2025",
+    "completed": true
   }
 ]

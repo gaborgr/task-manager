@@ -5,11 +5,9 @@ from task_functions import (
     add_task,
     delete_task,
     clear_tasks,
+    completed_task,
 )
 import os, time
-
-
-tasks = [task for task in load_tasks()]
 
 
 def menu():
@@ -28,6 +26,7 @@ def menu():
 
 
 def new_task_to_add():
+    tasks = [task for task in load_tasks()]
     task = input("Enter the task: ")
     print("How important it is?")
     print("1. LOW")
@@ -42,6 +41,7 @@ def new_task_to_add():
 
 
 def delete_single_task():
+    tasks = [task for task in load_tasks()]
     taks_id = int(input("Enter the Task ID. you want delete: "))
     print()
     sure = input(f"Are you sure you want eliminate the Task ID. {taks_id}? (y/n): ")
@@ -53,13 +53,21 @@ def delete_single_task():
         save_task(updated_list)
 
 
+def mark_task():
+    taks_id = int(input("Enter the Task ID. you completed: "))
+    tasks = [task for task in load_tasks()]
+    new_list = completed_task(taks_id, tasks)
+    save_task(new_list)
+
+
 def show_tasks():
+    tasks = [task for task in load_tasks()]
     size = len(tasks)
     if size == 0:
         print("Empty List!")
+        return
 
     max_len_priority = max(len(task["priority"]) for task in tasks)
-
     for i in range(size):
         print(
             f"Task ID. {tasks[i]['id']} | Due Date: {tasks[i]['due_date']} | PRIORITY: {tasks[i]['priority']:<{max_len_priority}} | Task: {tasks[i]['task']}"
@@ -98,6 +106,21 @@ def main():
             print()
             delete_single_task()
             print("Notification: Task deleted successfully! 🗑")
+            print()
+            input("Press any key to continue...")
+        elif option == 4:
+            clear_screen()
+            show_tasks()
+            print()
+            mark_task()
+            print("Notification: Task completed successfully! ✔")
+            print()
+            input("Press any key to continue...")
+        elif option == 5:
+            clear_screen()
+            clear_tasks()
+            clear_screen()
+            print("Notification: ALL TASK REMOVED! ⚠")
             print()
             input("Press any key to continue...")
         elif option == 6:

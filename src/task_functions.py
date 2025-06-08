@@ -35,6 +35,17 @@ def add_task(task_list: list, new_task: dict) -> list:
     return task_list
 
 
+def completed_task(task_id: int, task_list: list) -> list:
+    new_list = []
+    for task in task_list:
+        if task["id"] == task_id:
+            task["completed"] = True
+            new_list.append(task)
+        else:
+            new_list.append(task)
+    return new_list
+
+
 def delete_task(task_list: list, task_id: int) -> list:
     return [task for task in task_list if task["id"] != task_id]
 
