@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "task": "Caminando duro",
-    "priority": "LOW",
-    "due_date": "31-08-2025",
-    "completed": false
+    "task": "Food the dog!",
+    "priority": "HIGH",
+    "due_date": "06-06-2025",
+    "completed": true
   }
 ]
