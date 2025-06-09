@@ -1,9 +1,16 @@
 [
   {
     "id": 1,
-    "task": "Food the dog!",
-    "priority": "HIGH",
-    "due_date": "06-06-2025",
+    "task": "dinner with friends!",
+    "priority": "MEDIUM",
+    "due_date": "31-08-2025",
     "completed": true
+  },
+  {
+    "id": 2,
+    "task": "walk the dog!",
+    "priority": "HIGH",
+    "due_date": "15-09-2025",
+    "completed": false
   }
 ]
