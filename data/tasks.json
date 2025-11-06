@@ -11,6 +11,6 @@
     "task": "walk the dog!",
     "priority": "HIGH",
     "due_date": "15-09-2025",
-    "completed": false
+    "completed": true
   }
 ]

@@ -6,7 +6,7 @@
 
 A command-line task manager with persistent storage, priority tracking, and completion status - built with pure Python.
 
-![Task Manager Demo](https://github.com/user-attachments/assets/c883bad9-741c-4ada-8b7e-9367cec542b8)
+![Task Manager Demo](demo/demo-task.gif)
 
 ## **Features** ✨
 
